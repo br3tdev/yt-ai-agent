@@ -38,7 +38,7 @@ export const deleteChat = mutation({
 
     // Delete all messages in the chat
     const messages = await ctx.db
-      .query("message")
+      .query("messages")
       .withIndex("by_chat", (q) => q.eq("chatId", args.id))
       .collect();
 

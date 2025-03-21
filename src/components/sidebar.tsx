@@ -48,7 +48,8 @@ export default function Sidebar(props: ISidebarProps) {
           isMobileNavOpen ? "translate-x-0" : "-translate-x-full"
         )}
       >
-        <div className="p-4 border-b border-gray-200/50">
+        {/* removed ` border-b border-gray-200/50` styling */}
+        <div className="p-4">
           <Button
             onClick={handleNewChat}
             className="w-full bg-white hover:bg-gray-50 text-gray-700 border border-gray-200/50 shadow-sm hover:shadow transition-all duration-200"
@@ -56,7 +57,6 @@ export default function Sidebar(props: ISidebarProps) {
             <PlusIcon className="mr-2 h-4 w-4" /> New Chat
           </Button>
         </div>
-
         <div className="flex-1 overflow-y-auto space-y-2.5 p-4 scrollbar-thin scrollbar-thumb-gray-200 scrollbar-track-transparent">
           {chats?.map((chat) => (
             <ChatRow key={chat._id} chat={chat} onDelete={handleDeleteChat} />

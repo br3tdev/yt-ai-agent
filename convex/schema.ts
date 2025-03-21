@@ -8,7 +8,7 @@ export default defineSchema({
     createdAt: v.number(),
   }).index("by_user", ["userId"]),
 
-  message: defineTable({
+  messages: defineTable({
     chatId: v.id("chats"),
     content: v.string(),
     role: v.union(v.literal("user"), v.literal("assistant")),
